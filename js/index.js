@@ -17,6 +17,7 @@ function displayRepositories() {
 }
 
 function getCommits(repo) {
+  console.log(repo);
   const req = new XMLHttpRequest;
   req.addEventListener('load', function () {
     console.log(this.responseText);
