@@ -30,6 +30,6 @@ function displayCommits() {
     commit => '<li>' + commit.author.name + ' @ ' + author.login + ' - ' + commit.message + '</li>'
   ).join(' ')
   }</ul>`;
-
+  document.getElementById('details').innerHTML = commitsHTML;
 
 }
