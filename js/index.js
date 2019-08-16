@@ -7,6 +7,6 @@ function getRepositories() {
 }
 
 function displayRepositories() {
-
+  const repos = this.responseText;
 
 }
