@@ -10,7 +10,7 @@ function displayRepositories() {
   const reposResponse = JSON.parse(this.responseText);
   const repos = `<ul>${ reposResponse
     .map( repo =>
-      '<li>' + repo.name + '<a href="' + repo.rl + '"</li>'
+      '<li>' + repo.name + '<a href="' + repo.url + '"</li>'
     ).join(' ')}</ul>`;
   document.getElementById('repositories').innerHTML = repos;
 }
