@@ -13,12 +13,12 @@ function displayRepositories() {
     .map(
       repo =>
       '<li>' + repo.name + ' - <a href="' + repo.html_url + '">' + repo.html_url + '</a> + ' + '- <a href="#" data-repo="' + repo.full_name + '" onclick="getCommits(this)">Get Commits</a></li>'
-      console.log(this)
     ).join(' ')}</ul>`;
   document.getElementById('repositories').innerHTML = repos;
 }
 
 function getCommits(repo) {
+  console.log(repo)
   const fullName = repo.dataset.repo;
   const req = new XMLHttpRequest;
   req.addEventListener('load', displayCommits);
