@@ -22,7 +22,7 @@ function getCommits(repo) {
   req.addEventListener('load', function () {
     console.log(this.responseText);
   });
-  req.open('GET', `https://api.github.com/repos/${repo.login}/${repo.name}`);
+  req.open('GET', `https://api.github.com/repos/${repo.full_name}`);
   req.send();
 }
 
