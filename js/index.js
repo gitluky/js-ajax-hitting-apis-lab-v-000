@@ -11,11 +11,9 @@ function displayRepositories() {
   const reposResponse = JSON.parse(this.responseText);
   const repos = `<ul>${ reposResponse
     .map(
-      function (repo) {
-        console.log(this);
-        console.log(repo);
-        return '<li>' + repo.name + ' - <a href="' + repo.html_url + '">' + repo.html_url + '</a> + ' + '- <a href="#" data-fullname="' + repo.full_name + '" onclick="getCommits(this)">Get Commits</a></li>'
-    }).join(' ')}</ul>`;
+      repo =>
+       '<li>' + repo.name + ' - <a href="' + repo.html_url + '">' + repo.html_url + '</a> + ' + '- <a href="#" data-fullname="' + repo.full_name + '" onclick="getCommits(this)">Get Commits</a></li>'
+    ).join(' ')}</ul>`;
   document.getElementById('repositories').innerHTML = repos;
 }
 
