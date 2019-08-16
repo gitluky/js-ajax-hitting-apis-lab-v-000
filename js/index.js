@@ -26,6 +26,7 @@ function getCommits(repo) {
 
 function displayCommits() {
   const commits = JSON.parse(this.responseText);
+  console.log(commits);
   const commitsHTML = `<ul>${ commits
     .map( commit =>
       '<li>' + commit.author.name + ' @ ' + author.login + ' - ' + commit.message + '</li>'
