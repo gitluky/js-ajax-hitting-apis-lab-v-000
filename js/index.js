@@ -31,5 +31,4 @@ function displayCommits() {
   ).join(' ')
   }</ul>`;
   document.getElementById('details').innerHTML = commitsHTML;
-
 }
