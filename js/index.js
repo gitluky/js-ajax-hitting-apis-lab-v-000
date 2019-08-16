@@ -1,5 +1,5 @@
 // your code here
 function getRepositories() {
-  const repos = new XMLHttpRequest;
+  const req = new XMLHttpRequest;
 
 }
