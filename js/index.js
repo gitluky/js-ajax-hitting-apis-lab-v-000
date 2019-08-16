@@ -13,6 +13,7 @@ function displayRepositories() {
     .map(
       repo =>
       '<li>' + repo.name + ' - <a href="' + repo.html_url + '">' + repo.html_url + '</a> + ' + '- <a href="#" data-repo="' + repo.full_name + '" onclick="getCommits(this)">Get Commits</a></li>'
+      console.log(this)
     ).join(' ')}</ul>`;
   document.getElementById('repositories').innerHTML = repos;
 }
