@@ -12,5 +12,5 @@ function displayRepositories() {
     .map( repo =>
       '<li>' + repo.name + '<a href="' + repo.html_url + '"</li>'
     ).join(' ')}</ul>`;
-
+  document.getElementById('repositories').innerHTML = repos;
 }
