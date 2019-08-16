@@ -11,6 +11,6 @@ function displayRepositories() {
   const repos = `<ul>${ reposResponse
     .map( repo =>
       '<li>' + repo.name + '<a href="' + repo.html_url + '"</li>'
-    ).join(' ')
-  }</ul>`;
+    ).join(' ')}</ul>`;
+
 }
