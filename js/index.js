@@ -12,16 +12,17 @@ function displayRepositories() {
   const repos = `<ul>${ reposResponse
     .map(
       repo =>
-      '<li>' + repo.name + ' - <a href="' + repo.html_url + '">' + repo.html_url + '</a> + ' + '- <a href="#" data-repo="' + repo.name + '" onclick="' + getCommits(this) + '">Get Commits</a></li>'
+      '<li>' + repo.name + ' - <a href="' + repo.html_url + '">' + repo.html_url + '</a> + ' + '- <a href="#" data-repo="' + repo.name + '"' + 'data-author="' + repo.author.login + '" onclick="' + getCommits(this) + '">Get Commits</a></li>'
     ).join(' ')}</ul>`;
   document.getElementById('repositories').innerHTML = repos;
 }
 
 function getCommits(repo) {
+  const author = repo.dataset.author;
   const name = repo.dataset.repo;
   const req = new XMLHttpRequest;
   req.addEventListener('load', displayCommits);
-  req.open('GET', `https://api.github.com/repos/${repo.full_name}/commits`);
+  req.open('GET', `https://api.github.com/repos/${author}/${name}/commits`);
   req.send();
 }
 
