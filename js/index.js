@@ -23,3 +23,13 @@ function getCommits(repo) {
   req.open('GET', `https://api.github.com/repos/${repo.login}/${repo.name}`);
   req.send();
 }
+
+function displayCommits() {
+  const commits = JSON.parse(this.responseText);
+  const commitsHTML = `<ul>${commits.map(
+    commit => '<li>' + commit.author.name + ' @ ' + author.login + ' - ' + commit.message + '</li>'
+  ).join(' ')
+  }</ul>`;
+
+
+}
