@@ -7,6 +7,10 @@ function getRepositories() {
 }
 
 function displayRepositories() {
-  const repos = this.responseText;
-
+  const reposResponse = this.responseText;
+  const repos = `<ul>${ reposResponse
+    .map( repo =>
+      '<li>' + repo.name + '<a href="' + repo.html_url + '"</li>'
+    ).join(' ')
+  }</ul>`;
 }
