@@ -4,6 +4,7 @@ function getRepositories() {
   req.addEventListener('load', displayRepositories);
   req.open('GET', 'https://api.github.com/users/octocat/repos')
   req.send();
+  console.log(this.responseText);
 }
 
 function displayRepositories() {
