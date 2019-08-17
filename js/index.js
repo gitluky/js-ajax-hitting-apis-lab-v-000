@@ -45,6 +45,10 @@ function getBranches(repo) {
 }
 
 function displayBranches() {
-
+  const branches = JSON.parse(this.responseText);
+  const branchesHTML = `<ul>${branches
+  .map(
+    branch => '<li>' + branch.name + '</li>'
+  )}`
 
 }
