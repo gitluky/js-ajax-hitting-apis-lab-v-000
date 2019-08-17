@@ -36,6 +36,7 @@ function displayCommits() {
 
 function formatCommitDetails(commit) {
   let commitDetails = '<li>' + commit.commit.author.name + ' @ '
+  debugger;
     if (!!commit.author.login) {
       commitDetails += commit.author.login
     }
