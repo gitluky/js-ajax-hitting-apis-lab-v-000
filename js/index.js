@@ -35,6 +35,15 @@ function displayCommits() {
   document.getElementById('details').innerHTML = commitsHTML;
 }
 
+function formatCommitDetails(commit) {
+  let commitDetails = '<li>' + commit.commit.author.name + ' @ '
+    if (!!commit.author.login) {
+      commitDetails += commit.author.login
+    }
+    commitDetails += ' - ' + commit.commit.message + '</li>'
+    return commitDetails
+}
+
 function getBranches(repo) {
   const owner = repo.dataset.owner;
   const name = repo.dataset.name;
