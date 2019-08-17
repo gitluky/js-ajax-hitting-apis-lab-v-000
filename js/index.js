@@ -18,6 +18,7 @@ function displayRepositories() {
 }
 
 function getCommits(repo) {
+  console.log(repo);
   const fullName = repo.dataset.fullname;
   const req = new XMLHttpRequest;
   req.addEventListener('load', displayCommits);
