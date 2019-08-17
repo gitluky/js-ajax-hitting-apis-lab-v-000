@@ -23,8 +23,8 @@ function getCommits(repo) {;
   const name = repo.dataset.name;
   const req = new XMLHttpRequest;
   req.addEventListener('load', displayCommits);
-  console.log(owner);
-  console.log(name);
+  console.log('https://api.github.com/repos/' + owner + '/'+ name + '/commits');
+
   req.open('GET', 'https://api.github.com/repos/' + owner + '/'+ name + '/commits');
   req.send();
 }
