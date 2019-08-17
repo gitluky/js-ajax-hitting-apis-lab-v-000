@@ -19,8 +19,8 @@ function displayRepositories() {
 }
 
 function getCommits(repo) {;
-  const owner = repo.dataset.owner;
-  const name = repo.dataset.name;
+  const owner = repo.dataset.repository;
+  const name = repo.dataset.username;
   const req = new XMLHttpRequest;
   req.addEventListener('load', displayCommits);
   console.log('https://api.github.com/repos/' + owner + '/'+ name + '/commits');
@@ -47,8 +47,8 @@ function formatCommitDetails(commit) {
 }
 
 function getBranches(repo) {
-  const owner = repo.dataset.owner;
-  const name = repo.dataset.name;
+  const owner = repo.dataset.username;
+  const name = repo.dataset.repository;
   const req = new XMLHttpRequest;
   req.addEventListener('load', displayBranches)
   req.open('GET', 'https://api.github.com/repos/' + owner + '/'+ name + '/branches')
