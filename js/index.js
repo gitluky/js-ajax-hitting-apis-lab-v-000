@@ -19,7 +19,9 @@ function displayRepositories() {
 
 function getCommits(repo) {
   console.log(repo);
+  
   const fullName = repo.dataset.fullname;
+  console.log(fullName);
   const req = new XMLHttpRequest;
   req.addEventListener('load', displayCommits);
   req.open('GET', `https://api.github.com/repos/${fullName}/commits`);
