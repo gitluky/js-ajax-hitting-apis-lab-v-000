@@ -17,12 +17,12 @@ function displayRepositories() {
   document.getElementById('repositories').innerHTML = repos;
 }
 
-function getCommits(repo) {
-  console.log(repo);
-  const fullName = repo.dataset.fullname;
+function getCommits(repo) {;
+  const owner = repo.dataset.owner;
+  const name = repo.dataset.name;
   const req = new XMLHttpRequest;
   req.addEventListener('load', displayCommits);
-  req.open('GET', `https://api.github.com/repos/${fullName}/commits`);
+  req.open('GET', `https://api.github.com/repos/${owner}/${name}/commits`);
   req.send();
 }
 
