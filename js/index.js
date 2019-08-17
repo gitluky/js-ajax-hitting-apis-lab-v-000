@@ -30,6 +30,7 @@ function displayCommits() {
   const commits = JSON.parse(this.responseText);
   const commitsHTML = `<ul>${ commits
     .map( commit =>
+      debugger;
       '<li>' + commit.commit.author.name + ' @ ' + commit.author.login + ' - ' + commit.commit.message + '</li>'
   ).join(' ')}</ul>`;
   document.getElementById('details').innerHTML = commitsHTML;
