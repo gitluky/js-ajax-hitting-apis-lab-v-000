@@ -9,6 +9,7 @@ function getRepositories() {
 
 function displayRepositories() {
   const reposResponse = JSON.parse(this.responseText);
+  console.log(reposResponse);
   const repos = `<ul>${ reposResponse
     .map(
       repo =>
