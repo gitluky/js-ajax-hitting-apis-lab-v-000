@@ -19,8 +19,8 @@ function displayRepositories() {
 }
 
 function getCommits(repo) {;
-  const owner = repo.dataset.repository;
-  const name = repo.dataset.username;
+  const owner = repo.dataset.username;
+  const name = repo.dataset.repository;
   const req = new XMLHttpRequest;
   req.addEventListener('load', displayCommits);
   console.log('https://api.github.com/repos/' + owner + '/'+ name + '/commits');
