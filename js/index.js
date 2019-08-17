@@ -37,10 +37,11 @@ function displayCommits() {
 }
 
 function getBranches(repo) {
-  const fullName = repo.dataset.fullname
+  const owner = repo.dataset.owner;
+  const name = repo.dataset.name;
   const req = new XMLHttpRequest;
   req.addEventListener('load', displayBranches)
-  req.open('GET', `https://api.github.com/repos/${fullName}/branches`)
+  req.open('GET', `https://api.github.com/repos/${owner}/${name}/branches`)
   req.send()
 }
 
