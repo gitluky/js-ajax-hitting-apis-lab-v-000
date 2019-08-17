@@ -29,8 +29,7 @@ function getCommits(repo) {;
 function displayCommits() {
   const commits = JSON.parse(this.responseText);
   const commitsHTML = `<ul>${ commits
-    .map( commit =>
-      '<li>' + commit.commit.author.name + ' @ ' + commit.author.login + ' - ' + commit.commit.message + '</li>'
+    .map( formatCommitDetails
   ).join(' ')}</ul>`;
   document.getElementById('details').innerHTML = commitsHTML;
 }
